@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+ 
+<BorderPane prefWidth="600.0" prefHeight="400.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.client.CartController">
+ 
+      <!-- TOP SECTION: Header -->
+    <top>
+        <HBox spacing="20" style="-fx-background-color: #FADADA;">
+            <padding>
+                <Insets bottom="10" left="20" right="20" top="10" />
+            </padding>
+
+            <!-- App Name -->
+            <Label style="-fx-font-size: 24px; -fx-font-weight: bold;" text="CART" />
+        </HBox>
+    </top>
+ 
+<center>
+        <ScrollPane fitToWidth="true">
+            <VBox fx:id="cartItemsContainer" spacing="10">
+                <padding>
+                    <Insets left="10" right="10" top="10" bottom="10" />
+                </padding>
+            </VBox>
+        </ScrollPane>
+    </center>
+
+    <bottom>
+        <HBox spacing="10" alignment="center_right">
+        	<padding>
+        		<Insets top="10" right="10" bottom="10" left="10" />
+    		</padding>
+            <Label fx:id="totalLabel" text="Total: $0.00" style="-fx-font-size: 16px;" />
+            <Button text="Place Order"/>
+            <Button text="Back to Home" onAction="#handleBackToHome"/>
+        </HBox>
+    </bottom>
+</BorderPane>
+ 
+ 
