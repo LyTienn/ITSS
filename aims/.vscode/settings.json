@@ -8,7 +8,8 @@
     "d:\\javafx-sdk-23.0.1\\lib\\javafx.media.jar",
     "d:\\javafx-sdk-23.0.1\\lib\\javafx.swing.jar",
     "d:\\javafx-sdk-23.0.1\\lib\\javafx.web.jar",
-    "d:\\javafx-sdk-23.0.1\\lib\\javafx-swt.jar"
+    "d:\\javafx-sdk-23.0.1\\lib\\javafx-swt.jar",
+    "d:\\mysql-connector-j-9.3.0\\mysql-connector-j-9.3.0\\mysql-connector-j-9.3.0.jar"
   ],
-  "java.debug.settings.vmArgs": "--module-path D:/javafx-sdk-23.0.1/lib --add-modules javafx.controls,javafx.fxml",
+  "java.debug.settings.vmArgs": "--module-path D:/javafx-sdk-23.0.1/lib --add-modules javafx.controls,javafx.fxml"
 }

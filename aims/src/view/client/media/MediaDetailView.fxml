@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Pos?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1"
+            xmlns="http://javafx.com/javafx/23.0.1"
+            fx:controller="controller.client.MediaDetailController"
+            prefWidth="800" prefHeight="600">
+
+    <!-- Header ở phần top -->
+    <top>
+        <fx:include source="/components/header/Header.fxml"/>
+    </top>
+
+    <!-- Nội dung chi tiết ở phần center -->
+    <center>
+        <VBox fx:id="mediaDetailView"
+              spacing="20"
+              alignment="CENTER"
+              style="-fx-padding: 20;
+                     -fx-background-color: #f8f8f8;
+                     -fx-border-radius: 10;
+                     -fx-background-radius: 10;">
+
+            <!-- Hình ảnh media -->
+            <ImageView fx:id="mediaImage" fitHeight="200" fitWidth="200" />
+
+            <!-- Tiêu đề media -->
+            <Label fx:id="mediaTitle" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+
+            <!-- Mô tả media -->
+            <Label fx:id="mediaDescription" style="-fx-font-size: 14px;" wrapText="true" />
+
+            <!-- Giá media -->
+            <Label fx:id="mediaPrice" style="-fx-font-size: 16px; -fx-text-fill: #4CAF50;" />
+
+            <!-- Nút quay lại -->
+            <Button fx:id="backButton"
+                    onAction="#handleBackButton"
+                    text="Back"
+                    style="-fx-background-color: #FF5733; -fx-text-fill: white;" />
+        </VBox>
+    </center>
+
+</BorderPane>

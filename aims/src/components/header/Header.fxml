@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox alignment="CENTER_LEFT" spacing="20"
+      xmlns:fx="http://javafx.com/fxml/1"
+      xmlns="http://javafx.com/javafx/8"
+      fx:controller="components.header.HeaderController"
+      style="-fx-background-color: #FADADA;">
+    
+    <padding>
+        <Insets top="10" right="20" bottom="10" left="20"/>
+    </padding>
+
+    <Label text="AIMS" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #d62828;"/>
+
+    <HBox spacing="5" alignment="CENTER">
+        <TextField fx:id="searchField" promptText="Search..." prefWidth="250"/>
+        <Button text="Search"/>
+    </HBox>
+
+    <Region HBox.hgrow="ALWAYS"/>
+
+    <VBox alignment="CENTER_RIGHT" spacing="2">
+        <Label fx:id="cartCountLabel" text="0 media" style="-fx-font-size: 12px;"/>
+        <Button fx:id="cartButton" text="🛒 Cart" onAction="#handleCartButtonAction"
+                style="-fx-background-color: #ffffff;"/>
+    </VBox>
+</HBox>

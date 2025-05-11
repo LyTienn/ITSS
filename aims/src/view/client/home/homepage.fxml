@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="600.0" prefWidth="800.0"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.client.HomeController">
+
+    <!-- import component header -->
+    <top>
+        <fx:include source="/components/header/Header.fxml"/>
+    </top>
+    <!-- end header -->
+
+    <center>
+        <ScrollPane fitToWidth="true">
+            <GridPane fx:id="productGrid" alignment="TOP_CENTER" hgap="20" vgap="20">
+                <padding>
+                    <Insets top="20" right="20" bottom="20" left="20"/>
+                </padding>
+            </GridPane>
+        </ScrollPane>
+    </center>
+
+</BorderPane>

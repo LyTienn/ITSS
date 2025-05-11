@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 public class App extends Application {
     // override ham start
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/view/client/home/index.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/view/client/home/homepage.fxml"));
         primaryStage.setTitle("Client - Home Page");
         primaryStage.setScene((new Scene(root)));
         primaryStage.show();
