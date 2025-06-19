@@ -1,15 +1,26 @@
-package model;
-import java.sql.*;
+package service;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import config.DatabaseConnection;
 import java.util.ArrayList;
 import java.util.List;
-import Testmysql.DatabaseConnection;
+import model.Media;
 
-public class MediaDAO {
-	public List<Media> getAllMedia(){
+public class MediaService extends Media {
+		
+	public MediaService(int id, String category, int price, int quantity, String title, int value, String imageUrl) {
+		super(id, category, price, quantity, title, value, imageUrl);
+	}
+
+	// Lấy danh sách tất cả các media
+	public static List<Media> getAllMedia(){
 		List<Media> mediaList = new ArrayList<>();
+		// Nên tách query thành 1 class riêng để quản lý truy vấn SQL
         String query = "SELECT * FROM media";
         
-        try (Connection connection = DatabaseConnection.getConnection();
+        try (
+				Connection connection = DatabaseConnection.getConnection();
                 PreparedStatement statement = connection.prepareStatement(query);
                 ResultSet resultSet = statement.executeQuery()) {
 

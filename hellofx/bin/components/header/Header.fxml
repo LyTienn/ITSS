@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox alignment="CENTER_LEFT" spacing="20" 
+		xmlns:fx="http://javafx.com/fxml/1"
+      	xmlns="http://javafx.com/javafx/8"
+      	fx:controller="components.header.HeaderController"
+      	style="-fx-background-color: #fdd;">
+            <padding><Insets top="10" right="10" bottom="10" left="20"/></padding>
+            <Label text="AIMS" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #cc0000;"/>
+            <TextField fx:id = "searchField" promptText="Bạn muốn tìm kiếm sản phẩm gì ?" prefWidth="300"/>
+            <Button text="🔍" style="-fx-background-color: #cc0000; -fx-text-fill: white; -fx-padding: 6 10 6 10;"
+            onAction="#handleSearchButtonAction"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <HBox spacing="2" alignment="CENTER_RIGHT">
+                <Label text="0 sản phẩm"/>
+                <Button fx:id="cartButton" text="🛒 Giỏ hàng" onAction="#handleCartButtonAction" style="-fx-background-color: #ff9800; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px; -fx-padding: 6 14 6 14;"/>
+            </HBox>
+        </HBox>

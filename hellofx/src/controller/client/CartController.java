@@ -18,15 +18,15 @@ public class CartController {
 	@FXML
 	private Button removeButton;
     @FXML
+    private Button BackButton;
+    @FXML
     private VBox cartItemsContainer;
     @FXML
     private void handleBackToHome(ActionEvent event) {
     	try {
-    		FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/client/home/index.fxml"));
+    		FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/client/home/homepage.fxml"));
 			Parent root = loader.load();
-			Stage stage = (Stage) cartItemsContainer.getScene().getWindow();
-			stage.setScene(new Scene(root));
-			stage.show();
+			BackButton.getScene().setRoot(root);
     	} catch (Exception e) {
 			e.printStackTrace();
 		}

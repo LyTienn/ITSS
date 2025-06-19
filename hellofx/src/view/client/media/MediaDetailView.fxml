@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Pos?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1"
+            xmlns="http://javafx.com/javafx/23.0.1"
+            fx:controller="controller.client.MediaDetailController"
+            prefWidth="1280.0" prefHeight="720.0" style="-fx-background-color: #f5f5f5;">
+
+    <!-- Header ở phần top -->
+    <top>
+        <fx:include source="../../../components/header/Header.fxml"/>
+    </top>
+
+    <!-- Nội dung chi tiết ở phần center -->
+    <center>
+        <VBox fx:id="mediaDetailView"
+              spacing="20"
+              alignment="CENTER">
+            <padding><Insets top="30" right="30" bottom="30" left="30"/></padding>
+            <HBox spacing="40" alignment="CENTER">
+				<VBox spacing="15" alignment="TOP_LEFT">
+		            <!-- Hình ảnh media -->
+		            <ImageView fx:id="mediaImage" fitHeight="300" fitWidth="250" preserveRatio="true"/>
+		
+		            <!-- Tiêu đề media -->
+		            <Label fx:id="mediaTitle" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+		
+		            <!-- Mô tả media -->
+		            <Label fx:id="mediaDescription" style="-fx-font-size: 14px;" wrapText="true" />
+		
+		            <!-- Giá media -->
+		            <Label fx:id="mediaPrice" style="-fx-font-size: 16px; -fx-text-fill: #4CAF50;" />
+				    <HBox spacing="10" alignment="CENTER_LEFT">
+	                	<Button text="-" prefWidth="30" style="-fx-background-color: #f44336; -fx-text-fill: white;"/>
+	                    <Label text="1" style="-fx-font-size: 16px;"/>
+	                    <Button text="+" prefWidth="30" style="-fx-background-color: #2196F3; -fx-text-fill: white;"/>
+	                </HBox>
+		            <!-- Nút quay lại -->
+		            <HBox spacing="15">
+	                	<Button text="Thêm vào giỏ hàng" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-size: 14px;"/>
+	                    <Button fx:id="backButton" text="Quay lại" style="-fx-background-color: #ccc; -fx-text-fill: black; -fx-font-size: 14px;" onAction="#handleBackButton"/>
+	                </HBox>
+	        	</VBox>
+	    	</HBox>              
+        </VBox>
+    </center>
+
+</BorderPane>

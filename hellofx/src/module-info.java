@@ -11,11 +11,15 @@ module hellofx {
     requires transitive javafx.base;
     requires java.sql;
     
-    
-    exports controller.client;  // Export package chứa HomeController
+    exports components.mediaItem;
+    opens components.mediaItem to javafx.fxml;
+    exports components.header;
+    opens components.header to javafx.fxml;
+    exports controller.client;  
     opens controller.client to javafx.fxml;
-    opens view.client.cart to javafx.fxml;
-    //exports view.client.cart;
     opens Main to javafx.fxml;
+    opens model to javafx.fxml;
+    
+    exports model;
     exports Main;
 }

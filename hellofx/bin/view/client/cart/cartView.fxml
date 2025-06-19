@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+ 
+<BorderPane prefWidth="1280.0" prefHeight="720.0" style="-fx-background-color: #f5f5f5;"
+			xmlns="http://javafx.com/javafx/23.0.1" 
+			xmlns:fx="http://javafx.com/fxml/1" 
+			fx:controller="controller.client.CartController">
+ 
+      <!-- TOP SECTION: Header -->
+    <top>
+        <fx:include source="../../../components/header/Header.fxml"/>
+    </top>
+ 
+<center>
+        <HBox spacing="40" alignment="TOP_CENTER">
+            <!-- DANH SÁCH SẢN PHẨM -->
+            <VBox spacing="20" prefWidth="800">
+                <padding><Insets top="30" left="30" bottom="30" right="0"/></padding>
+                <!-- Sản phẩm trong giỏ -->
+                <HBox spacing="20" alignment="CENTER_LEFT" style="-fx-background-color: white; -fx-padding: 20; -fx-border-color: #ccc; -fx-border-width: 1;">
+                    
+                    <VBox spacing="5">
+                        <Label text="Clean Code" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                        <HBox spacing="10" alignment="CENTER_LEFT">
+                            <Button text="-" style="-fx-background-color: #f44336; -fx-text-fill: white;"/>
+                            <Label text="1"/>
+                            <Button text="+" style="-fx-background-color: #2196F3; -fx-text-fill: white;"/>
+                            <Label text=" x 120,000 VND = 120,000 VND" style="-fx-text-fill: #cc0000;"/>
+                        </HBox>
+                    </VBox>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Button text="🗑" style="-fx-background-color: transparent; -fx-font-size: 18px;"/>
+                </HBox>
+            </VBox>
+
+            <!-- THÔNG TIN GIAO HÀNG + TỔNG TIỀN -->
+            <VBox spacing="20" prefWidth="400">
+                <padding><Insets top="30" right="30" bottom="30" left="0"/></padding>
+                <TitledPane text="Địa chỉ giao hàng" expanded="true">
+                    <VBox spacing="10">
+                        <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+                        <HBox spacing="10">
+                            <Label text="Tên người nhận:"/>
+                            <TextField prefWidth="200"/>
+                        </HBox>
+                        <HBox spacing="10">
+                            <Label text="Số điện thoại"/>
+                            <TextField prefWidth="200"/>
+                        </HBox>
+                        <HBox spacing="10">
+                            <Label text="Địa chỉ:"/>
+                            <TextField prefWidth="200"/>
+                        </HBox>
+                    </VBox>
+                </TitledPane>
+
+                <!-- CHỌN PHƯƠNG THỨC THANH TOÁN -->
+                <TitledPane text="Hình thức thanh toán" expanded="true">
+                    <VBox spacing="10">
+                        <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+                        <!-- Sử dụng thuộc tính toggleGroup chung để đảm bảo chỉ chọn được 1 phương thức -->
+                        <RadioButton text="Thanh toán khi nhận hàng" selected="true" toggleGroup="$paymentGroup"/>
+                        <RadioButton text="Thanh toán bằng VNPAY" toggleGroup="$paymentGroup"/>
+                    </VBox>
+                </TitledPane>
+
+                <VBox spacing="10" style="-fx-border-color: #ccc; -fx-border-width: 1;">
+                    <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+                    <Label text="Tạm tính: 120,000 VND"/>
+                    <Label text="Thuế (10%): 12,000 VND"/>
+                    <Label text="Tổng cộng:" style="-fx-font-weight: bold;"/>
+                    <Label text="132,000 VND" style="-fx-font-size: 16px; -fx-text-fill: red; -fx-font-weight: bold;"/>
+                </VBox>
+
+                <Button text="Thanh toán" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-size: 14px; -fx-pref-width: 150;"/>
+            </VBox>
+        </HBox>
+    </center>
+
+    <bottom>
+        <HBox spacing="10" alignment="center_right">
+        	<padding>
+        		<Insets top="10" right="10" bottom="10" left="10" />
+    		</padding>
+            <Button fx:id="BackButton" text="Quay lại" onAction="#handleBackToHome"/>
+        </HBox>
+    </bottom>
+</BorderPane>
+ 
+ 

@@ -1,3 +1,18 @@
+/*
+Cohesion level: Communicational
+→ vì các hàm cùng xử lý trên một dữ liệu.
+
+*/
+
+/*
+SRP Violation: NO
+→ Lớp `Media` hiện tại đang vi phạm nguyên lý SRP vì có **hai lý do để thay đổi**:
+   1. Nếu business logic của `Media` thay đổi → cần sửa lớp.
+   2. Nếu cách truy vấn CSDL thay đổi (ví dụ: đổi DBMS, refactor SQL) → cũng phải sửa cùng lớp.
+Solution:
+	Tách phần truy vấn ra thành 1 package chuyên truy vấn
+*/
+
 package model;
 
 public class Media {
@@ -39,6 +54,6 @@ public class Media {
 	
 	public String getImageUrl() { return imageUrl; }
 	public void setImageUrl(String imageUrl) { this.imageUrl = imageUrl;
-	
 	}
+
 }
